@@ -4,11 +4,6 @@ import socket
 while True:
 
 
-    sock_for_N1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock_for_N1.connect(("localhost", 8001))
-
-    print("Something")
-
     ## choose some product
     product = input("Gucci bag, 3000 euro\n"
                     "iPhone 11, 1000 euro\n"
@@ -17,6 +12,8 @@ while True:
     price = product.split(", ")[1].split(" ")[0]
     product = product.split(", ")[0]
 
+    sock_for_N1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock_for_N1.connect(("localhost", 8001))
 
     sock_for_N1.send(price.encode())
 
