@@ -8,7 +8,8 @@ while True:
     product = input("Gucci bag, 3000 euro\n"
                     "iPhone 11, 1000 euro\n"
                     "idk what to put, 2000 euro\n"
-                    "(Please copy and paste as it is. No further function for this.)")
+                    "(Please copy and paste the whole line as it is."
+                    "No further function for this.)")
 
     price = product.split(", ")[1].split(" ")[0]
     product = product.split(", ")[0]
@@ -26,6 +27,7 @@ while True:
     #ends the information to the server.
     info_customer = name + ", " + bank_account
     sock_for_N1.send(info_customer.encode())
+
 
 
     #waits the result from the server about whether it is possible to pay.
