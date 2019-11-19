@@ -1,5 +1,5 @@
 import socket
-
+import sys
 
 while True:
 
@@ -15,7 +15,7 @@ while True:
 
     #connects with the server.
     sock_for_N1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock_for_N1.connect(("localhost", 8001))
+    sock_for_N1.connect((sys.argv[1], 8001))
 
     sock_for_N1.send(price.encode())
 
