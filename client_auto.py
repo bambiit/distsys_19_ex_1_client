@@ -44,14 +44,14 @@ def connect_to_server(call_no):
 
 
 def main():
-    loop = 50
+    loop = 25
     call_no_array = []
     for x in range(0, loop):
         call_no_array.append(x)
 
     start_time = datetime.datetime.now()
 
-    with closing(Pool(processes=50)) as pool :
+    with closing(Pool(processes=25)) as pool :
         pool.map(connect_to_server, call_no_array)
         pool.terminate()
 
